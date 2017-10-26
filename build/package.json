@@ -1,9 +1,9 @@
 {
-  "name": "pco-design-exercise",
+  "name": "pco-code-exercise",
   "version": "1.0.0",
   "repository": {
     "type": "git",
-    "url": "git://github.com/developwithpurpose/front-end-developer-exercise.git"
+    "url": "https://github.com/joshwilkerson/pco-code-exercise.git"
   },
   "scripts": {
     "babel": "babel --presets es2015 -w js/main.js -o ../main.js",
