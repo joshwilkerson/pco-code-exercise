@@ -1,6 +1,6 @@
 ## PCO Code Exercise
 
-[View Online](https://joshwilkerson.github.io/pco-code-exercise/view.html)
+[View Online](https://joshwilkerson.github.io/pco-code-exercise)
 
 **Development Notes:**
 
