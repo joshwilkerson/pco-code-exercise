@@ -1,8 +1,6 @@
 ## PCO Code Exercise
 **Josh Wilkerson**
-
-[josh@joshwilkerson.com](mailto:josh@joshwilkerson.com)
-
+[View Online](https://joshwilkerson.github.io/pco-code-exercise/view.html)
 
 **Development Notes:**
 
@@ -15,3 +13,8 @@
 
 1. "cd" into `/build` directory and run `npm install` to load node dependencies
 2. to view on local server or recompile source files, run `npm start`
+
+
+**Josh Wilkerson**
+[josh@joshwilkerson.com](mailto:josh@joshwilkerson.com)
+[joshwilkerson.com](https://joshwilkerson.com)
