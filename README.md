@@ -1,5 +1,5 @@
 ## PCO Code Exercise
-**Josh Wilkerson**
+
 [View Online](https://joshwilkerson.github.io/pco-code-exercise/view.html)
 
 **Development Notes:**
