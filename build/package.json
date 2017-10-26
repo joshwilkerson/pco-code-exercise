@@ -1,0 +1,27 @@
+{
+  "name": "pco-design-exercise",
+  "version": "1.0.0",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/developwithpurpose/front-end-developer-exercise.git"
+  },
+  "scripts": {
+    "babel": "babel --presets es2015 -w js/main.js -o ../main.js",
+    "sass": "node-sass -w scss/compile.scss ../style.css --output-style expanded --importer node_modules/node-sass-import",
+    "server": "http-server ../ -d false",
+    "start": "npm run babel & npm run sass & npm run server"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "http-server": "^0.8.0",
+    "node-sass": "^4.5.3"
+  },
+  "dependencies": {
+    "amdefine": "^1.0.1",
+    "ms": "^2.0.0",
+    "node-sass-import": "^1.1.1",
+    "request": "^2.83.0"
+  }
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<!--[if IE]>
+	<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<title>PCO Code Exercise | Josh Wilkerson</title>
+	<link rel="shortcut icon" href="favicon.ico">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,600,700" rel="stylesheet">
+	<link href="https://file.myfontastic.com/iP8Hs5vAhvt5Gx2XHwQhCH/icons.css" rel="stylesheet">
+	<link rel='stylesheet' href='style.css' />
+</head>
+<body>
+<section id="topBar">
+	<header>
+		<p>header element</p>
+	</header>
+</section>
+
+<section id="search">
+	<form>
+		<input name="search" type="text" placeholder="What are you looking for?"/>
+		<button name="submit" type="submit" disabled><span class="icon-search"></span></button>
+	</form>
+</section>
+
+<section id="listContainer">
+	<header>
+		<div class="container">
+			<p>34 results</p>
+			<a href="javascript:void(0);" class="ui-dropdown">
+				<span class="icon-bars-vert"></span>
+				<span class="icon-arrow-down"></span>
+			</a>
+		</div>
+	</header>
+
+
+	<div id="results">
+		<div class="results--list">
+			<div class="filterBar">
+				<span class="avatar"></span>
+				<span class="name"><a href="#_" class="sorted">Name <span class="icon-down-open"></span></a></span>
+				<span class="age"><a href="#_">Age <span class="icon-down-open"></span></a></span>
+				<span class="phone"><a href="#_">Primary Phone Number <span class="icon-down-open"></span></a></span>
+				<span class="email"><a href="#_">Primary Email Address <span class="icon-down-open"></span></a></span>
+				<span class="address"><a href="#_">Primary Address <span class="icon-down-open"></span></a></span>
+			</div>
+
+			<div id="results--items">
+				<template v-for="user in users">
+					<div class="user">
+						<a href="view.html">
+							<span class="avatar">
+								<img v-bind:src="user.picture.medium" />
+							</span>
+							<span class="name">{{user.name.first}} {{user.name.last}}</span>
+							<span class="age">{{user.age}}</span>
+							<span class="phone">{{user.phone.primary.number}}</span>
+							<span class="email">{{user.email.primary.address}}</span>
+							<span class="address">{{user.address.primary.street}} {{user.address.primary.city}}, {{user.address.primary.state}}, {{user.address.primary.zipcode}}</span>
+						</a>
+					</div>
+				</template>
+			</div>
+	  </div>
+
+	<footer class="pagination">
+		<ul>
+			<li><a href="#_" class="disabled">Prev</a></li>
+			<li><a href="#_" class="active">1</a></li>
+			<li><a href="#_">...</a></li>
+			<li><a href="#_">3</a></li>
+			<li><a href="#_">Next</a></li>
+		</ul>
+	</footer>
+</section>
+
+<div class="links">
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+	<a href="#">link</a>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
