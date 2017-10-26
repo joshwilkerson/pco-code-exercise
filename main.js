@@ -15,17 +15,25 @@ if (document.getElementById('search') != undefined) {
 }
 
 // sort results behaivor
-var sortLinks = document.querySelectorAll('.filter a');
+var filterLinks = document.querySelectorAll('.filterBar a');
 
-sortLinks.forEach(function (link) {
-  return link.addEventListener('click', function () {
-    alert('click');
+filterLinks.forEach(function (link) {
+  return link.addEventListener('click', function (e) {
+    if (link.classList.contains('sorted')) {
+      link.classList.toggle('asc');
+    } else {
+      filterLinks.forEach(function (sibling) {
+        return sibling.classList.remove('sorted');
+      });
+      link.classList.add('sorted');
+    }
+    e.preventDefault();
   });
 });
 
 // search results data
 new Vue({
-  el: "#results",
+  el: "#results--items",
 
   data: function data() {
     return {

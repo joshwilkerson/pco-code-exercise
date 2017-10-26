@@ -15,17 +15,23 @@ if(document.getElementById('search')!=undefined){
 
 
 // sort results behaivor
-const sortLinks = document.querySelectorAll('.filter a');
+const filterLinks = document.querySelectorAll('.filterBar a');
 
-sortLinks.forEach(link => link.addEventListener('click', function(){
-  alert('click');
+filterLinks.forEach(link => link.addEventListener('click', function(e){
+  if(link.classList.contains('sorted')) {
+      link.classList.toggle('asc');
+  } else {
+    filterLinks.forEach(sibling => sibling.classList.remove('sorted'));
+    link.classList.add('sorted');
+  }
+  e.preventDefault();
 }));
 
 
 
 // search results data
 new Vue({
-  el: "#results",
+  el: "#results--items",
 
   data() {
     return {
