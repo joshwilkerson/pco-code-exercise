@@ -1,27 +1,37 @@
 {
   "name": "pco-code-exercise",
-  "version": "1.0.0",
+  "version": "2.0.0",
+  "description": "PCO Code Exercis",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/joshwilkerson/pco-code-exercise.git"
   },
-  "scripts": {
-    "babel": "babel --presets es2015 -w js/main.js -o ../main.js",
-    "sass": "node-sass -w scss/compile.scss ../style.css --output-style expanded --importer node_modules/node-sass-import",
-    "server": "http-server ../ -d false",
-    "start": "npm run babel & npm run sass & npm run server"
-  },
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.0",
-    "babel-preset-es2015": "^6.24.1",
-    "http-server": "^0.8.0",
-    "node-sass": "^4.5.3"
+    "autoprefixer": "^6.7.7",
+    "babel-core": "^6.25.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-react": "^6.24.1",
+    "browser-sync": "^2.18.13",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.0.1",
+    "gulp-babel": "^7.0.0",
+    "gulp-combine-mq": "^0.4.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-notify": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.0",
+    "gulp-uglify": "^1.4.1",
+    "gulp-util": "^3.0.8"
   },
   "dependencies": {
-    "amdefine": "^1.0.1",
-    "ms": "^2.0.0",
-    "node-sass-import": "^1.1.1",
-    "request": "^2.83.0"
+    "gulp": "^3.9.1"
   }
 }
