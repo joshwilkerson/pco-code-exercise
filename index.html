@@ -53,23 +53,9 @@
 				<span class="address"><a href="#_">Primary Address <span class="icon-down-open"></span></a></span>
 			</div>
 
-			<div id="results--items">
-				<template v-for="user in users">
-					<div class="user">
-						<a href="view.html">
-							<span class="avatar">
-								<img v-bind:src="user.picture.medium" />
-							</span>
-							<span class="name">{{user.name.first}} {{user.name.last}}</span>
-							<span class="age">{{user.age}}</span>
-							<span class="phone">{{user.phone.primary.number}}</span>
-							<span class="email">{{user.email.primary.address}}</span>
-							<span class="address">{{user.address.primary.street}} {{user.address.primary.city}}, {{user.address.primary.state}}, {{user.address.primary.zipcode}}</span>
-						</a>
-					</div>
-				</template>
-			</div>
+			<div id="results--items"></div>
 	  </div>
+	</div>
 
 	<footer class="pagination">
 		<ul>
@@ -82,7 +68,8 @@
 	</footer>
 </section>
 
-<script src="https://cdn.jsdelivr.net/npm/vue"></script>
-<script type="text/javascript" src="js/main.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.1.1/umd/react.production.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.1.1/umd/react-dom.production.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

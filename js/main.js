@@ -31,471 +31,373 @@ filterLinks.forEach(function (link) {
   });
 });
 
-// search results data
-new Vue({
-  el: "#results--items",
+var userData = [{
+  firstName: "Christian",
+  lastName: "Hopkins",
+  age: 31,
+  gender: "female",
+  phone: {
+    primary: 4173286310,
+    primaryType: "home",
+    secondary: 4171236334,
+    secondaryType: "cell"
+  },
+  email: {
+    primary: "christian.hopkins34@gmail.com",
+    primaryType: "home",
+    secondary: "christian.hopkins34@church.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "2830 Cherry St",
+    primaryCity: "Springfield",
+    primaryState: "TN",
+    primaryZip: 65898,
+    primaryType: "home",
+    secondaryStreet: "2830 Cherry St",
+    secondaryCity: "Springfield",
+    secondaryState: "TN",
+    secondaryZip: 65898,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/female-1.jpg"
+}, {
+  firstName: "Josh",
+  lastName: "Wilkerson",
+  age: 33,
+  phone: {
+    primary: 6157398522,
+    primaryType: "cell"
+  },
+  email: {
+    primary: "josh@joshwilkerson.com",
+    primaryType: "home",
+    secondary: "josh.wilkerson@dvlseigenthaler",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "401 Chelsey Cove",
+    primaryCity: "Franklin",
+    primaryState: "TN",
+    primaryZip: 37064,
+    primaryType: "home",
+    secondaryStreet: "400 12th Ave South",
+    secondaryCity: "Nashville",
+    secondaryState: "TN",
+    secondaryZip: 37023,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/joshwilkerson-avatar-lg.jpg"
+}, {
+  firstName: "Curtis",
+  lastName: "Ganes",
+  age: 40,
+  phone: {
+    primary: 6153922812,
+    primaryType: "cell",
+    secondary: 6152193202,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "curtisganes@gmail.com",
+    primaryType: "home",
+    secondary: "curtis.ganes@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "302 Old Hickory Blvd",
+    primaryCity: "Nashville",
+    primaryState: "TN",
+    primaryZip: 37230,
+    primaryType: "home",
+    secondaryStreet: "2011 3rd Ave N",
+    secondaryCity: "Nashville",
+    secondaryState: "TN",
+    secondaryZip: 37023,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/male-4.jpg"
+}, {
+  firstName: "John",
+  lastName: "Harwell",
+  age: 35,
+  phone: {
+    primary: 2103232903,
+    primaryType: "cell",
+    secondary: 6153016442,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "john.harwell02@gmail.com",
+    primaryType: "home",
+    secondary: "johnharwell@church.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "2820 Maple Ln",
+    primaryCity: "Columbia",
+    primaryState: "TN",
+    primaryZip: 37019,
+    primaryType: "home",
+    secondaryStreet: "102 Main St",
+    secondaryCity: "Columbia",
+    secondaryState: "TN",
+    secondaryZip: 37019,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/male-2.jpg"
+}, {
+  firstName: "Sarah",
+  lastName: "Ramsey",
+  age: 29,
+  phone: {
+    primary: 615311948,
+    primaryType: "cell",
+    secondary: 6158392912,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "sararamsey02@gmail.com",
+    primaryType: "home",
+    secondary: "sarah@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "245 Royal Oaks Pkwy",
+    primaryCity: "Franklin",
+    primaryState: "TN",
+    primaryZip: 37067,
+    primaryType: "home",
+    secondaryStreet: "1564 Franklin Rd",
+    secondaryCity: "Nashville",
+    secondaryState: "TN",
+    secondaryZip: 37203,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/female-2.jpg"
+}, {
+  firstName: "Beth",
+  lastName: "Robertson",
+  age: 34,
+  phone: {
+    primary: 6159289313,
+    primaryType: "cell",
+    secondary: 6153016442,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "bethrobertson@outlook.com",
+    primaryType: "home",
+    secondary: "sarah@bethrobertson@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "3021 Concord Rd",
+    primaryCity: "Brentwood",
+    primaryState: "TN",
+    primaryZip: 37027,
+    primaryType: "home",
+    secondaryStreet: "102 Main St",
+    secondaryCity: "Columbia",
+    secondaryState: "TN",
+    secondaryZip: 37019,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/female-3.jpg"
+}, {
+  firstName: "Stephen",
+  lastName: "Adams",
+  age: 30,
+  phone: {
+    primary: 6152931938,
+    primaryType: "cell",
+    secondary: 6152102059,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "stephen.adams@yahoo.com",
+    primaryType: "home",
+    secondary: "stephen@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "1492 Culbertson Rd",
+    primaryCity: "Antioch",
+    primaryState: "TN",
+    primaryZip: 37013,
+    primaryType: "home",
+    secondaryStreet: "294 Old Hickory Blvd",
+    secondaryCity: "Brentwood",
+    secondaryState: "TN",
+    secondaryZip: 37027,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/male-3.jpg"
+}, {
+  firstName: "Katie",
+  lastName: "Watson",
+  age: 42,
+  phone: {
+    primary: 6155834921,
+    primaryType: "cell",
+    secondary: 6152321058,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "katiewatson1@gmail.com",
+    primaryType: "home",
+    secondary: "katie@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "1204 Grayline Cir",
+    primaryCity: "Nashville",
+    primaryState: "TN",
+    primaryZip: 37203,
+    primaryType: "home",
+    secondaryStreet: "294 Old Hickory Blvd",
+    secondaryCity: "Brentwood",
+    secondaryState: "TN",
+    secondaryZip: 37027,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/female-4.jpg"
+}, {
+  firstName: "Mark",
+  lastName: "Hammond",
+  age: 39,
+  phone: {
+    primary: 6152146021,
+    primaryType: "cell",
+    secondary: 6157530301,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "hammond_m@gmail.com",
+    primaryType: "home",
+    secondary: "mark@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "2491 3rd Ave N",
+    primaryCity: "Nashville",
+    primaryState: "TN",
+    primaryZip: 37203,
+    primaryType: "home",
+    secondaryStreet: "24021 Franklin Pk",
+    secondaryCity: "Nashville",
+    secondaryState: "TN",
+    secondaryZip: 37205,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/male-1.jpg"
+}, {
+  firstName: "Emily",
+  lastName: "Smith",
+  age: 39,
+  phone: {
+    primary: 6155373582,
+    primaryType: "cell",
+    secondary: 6157530301,
+    secondaryType: "work"
+  },
+  email: {
+    primary: "emilysmith@gmail.com",
+    primaryType: "home",
+    secondary: "emily@business.com",
+    secondaryType: "work"
+  },
+  address: {
+    primaryStreet: "312 Lipbsomb Dr",
+    primaryCity: "Brentwood",
+    primaryState: "TN",
+    primaryZip: 37027,
+    primaryType: "home",
+    secondaryStreet: "24021 Franklin Pk",
+    secondaryCity: "Nashville",
+    secondaryState: "TN",
+    secondaryZip: 37205,
+    secondaryType: "work"
+  },
+  thumbnail: "https://joshwilkerson.com/PCO/users/female-5.jpg"
+}];
 
-  data: function data() {
-    return {
-      users: [{
-        "name": {
-          "first": "Christian",
-          "last": "Hopkins"
-        },
-        "age": "31",
-        "phone": {
-          "primary": {
-            "number": "(417) 328-6310",
-            "type": "home"
-          },
-          "secondary": {
-            "number": "(417) 123-6334",
-            "type": "cell"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "christian.hopkins34@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "christian.hopkins34@church.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "2830 Cherry St",
-            "city": "Springfield",
-            "state": "TN",
-            "zipcode": 65898,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "2830 Cherry St",
-            "city": "Springfield",
-            "state": "TN",
-            "zipcode": 65898,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "https://randomuser.me/api/portraits/women/59.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/women/59.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Josh",
-          "last": "Wilkerson"
-        },
-        "age": "31",
-        "phone": {
-          "primary": {
-            "number": "(615) 739-8522",
-            "type": "cell"
-          },
-          "secondary": null
-        },
-        "email": {
-          "primary": {
-            "address": "josh@joshwilkerson.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "josh@dvlseigenthaler.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "401 Chelsey Cove",
-            "city": "Franklin",
-            "state": "TN",
-            "zipcode": 37064,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "700 12th Ave South",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37203,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "images/joshwilkerson-avatar-lg.jpg",
-          "medium": "images/joshwilkerson-avatar-sm.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Curtis",
-          "last": "Ganes"
-        },
-        "age": "40",
-        "phone": {
-          "primary": {
-            "number": "(615) 392-2812",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 219-3202",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "curtisganes@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "curtis.ganes@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "302 Old Hickory Blvd",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37230,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "2011 3rd Ave N",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37203,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "images/avatar-m-lg.png",
-          "medium": "images/avatar-m-sm.png"
-        }
-      }, {
-        "name": {
-          "first": "John",
-          "last": "Harwell"
-        },
-        "age": "35",
-        "phone": {
-          "primary": {
-            "number": "(210) 323-2903",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 301-6442",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "john.harwell02@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "johnharwell@church.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "2820 Maple Ln",
-            "city": "Columbia",
-            "state": "TN",
-            "zipcode": 37019,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "102 Main St",
-            "city": "Columbia",
-            "state": "TN",
-            "zipcode": 37019,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "https://randomuser.me/api/portraits/men/23.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/men/23.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Sarah",
-          "last": "Ramsey"
-        },
-        "age": "29",
-        "phone": {
-          "primary": {
-            "number": "(615) 311-9482",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 839-2912",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "sararamsey02@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "sarah@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "245 Royal Oaks Pkwy",
-            "city": "Franklin",
-            "state": "TN",
-            "zipcode": 37067,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "1564 Franklin Rd",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37203,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "images/avatar-f-lg.png",
-          "medium": "images/avatar-f-sm.png"
-        }
-      }, {
-        "name": {
-          "first": "Beth",
-          "last": "Robertson"
-        },
-        "age": "34",
-        "phone": {
-          "primary": {
-            "number": "(615) 928-9313",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 301-6442",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "bethrobertson@outlook.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "bethrobertson@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "3021 Concord Rd",
-            "city": "Brentwood",
-            "state": "TN",
-            "zipcode": 37027,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "102 Main St",
-            "city": "Columbia",
-            "state": "TN",
-            "zipcode": 37019,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "https://randomuser.me/api/portraits/women/17.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/women/17.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Stephen",
-          "last": "Adams"
-        },
-        "age": "30",
-        "phone": {
-          "primary": {
-            "number": "(615) 293-1938",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 210-2059",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "stephen.adams@yahoo.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "stephen@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "1492 Culbertson Rd",
-            "city": "Antioch",
-            "state": "TN",
-            "zipcode": 37013,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "294 Old Hickory Blvd",
-            "city": "Brentwood",
-            "state": "TN",
-            "zipcode": 37027,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "https://randomuser.me/api/portraits/men/22.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/men/22.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Katie",
-          "last": "Watson"
-        },
-        "age": "42",
-        "phone": {
-          "primary": {
-            "number": "(615) 583-4921",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 232-1058",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "katiewatson1@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "katie@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "1204 Grayline Cir",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37203,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "294 Old Hickory Blvd",
-            "city": "Brentwood",
-            "state": "TN",
-            "zipcode": 37027,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "https://randomuser.me/api/portraits/women/30.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/women/30.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Mark",
-          "last": "Hammond"
-        },
-        "age": "39",
-        "phone": {
-          "primary": {
-            "number": "(615) 214-6021",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 753-0301",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "hammond_m@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "mark@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "2491 3rd Ave N",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37203,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "24021 Franklin Pk",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37205,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "https://randomuser.me/api/portraits/men/10.jpg",
-          "medium": "https://randomuser.me/api/portraits/med/men/10.jpg"
-        }
-      }, {
-        "name": {
-          "first": "Emily",
-          "last": "Smith"
-        },
-        "age": "31",
-        "phone": {
-          "primary": {
-            "number": "(615) 537-3582",
-            "type": "cell"
-          },
-          "secondary": {
-            "number": "(615) 753-0301",
-            "type": "work"
-          }
-        },
-        "email": {
-          "primary": {
-            "address": "emilysmith@gmail.com",
-            "type": "home"
-          },
-          "secondary": {
-            "address": "emily@business.com",
-            "type": "work"
-          }
-        },
-        "address": {
-          "primary": {
-            "street": "312 Lipbsomb Dr",
-            "city": "Brentwood",
-            "state": "TN",
-            "zipcode": 37027,
-            "type": "home"
-          },
-          "secondary": {
-            "street": "24021 Franklin Pk",
-            "city": "Nashville",
-            "state": "TN",
-            "zipcode": 37205,
-            "type": "work"
-          }
-        },
-        "picture": {
-          "large": "images/avatar-f-lg.png",
-          "medium": "images/avatar-f-sm.png"
-        }
-      }]
-    };
+function getProfilePhoto(image, gender) {
+  if (image) {
+    return React.createElement('img', { src: image });
+  } else {
+    if (gender == "male") {
+      return React.createElement('img', { src: 'https://joshwilkerson.com/PCO/users/default-user-m.jpg' });
+    } else {
+      return React.createElement('img', { src: 'https://joshwilkerson.com/PCO/users/default-user-f.jpg' });
+    }
   }
-});
+}
+
+function formatPhoneNumber(phone) {
+  var phoneStr = phone.toString();
+  var phone1 = phoneStr.substr(0, 3);
+  var phone2 = phoneStr.substr(3, 3);
+  var phone3 = phoneStr.substr(6, 4);
+  return '(' + phone1 + ') ' + phone2 + '-' + phone3;
+}
+
+function DisplayUsers(props) {
+  var userData = props.users;
+  var showUser = userData.map(function (user) {
+    return React.createElement(
+      'div',
+      { 'class': 'user' },
+      React.createElement(
+        'a',
+        { href: '#' },
+        React.createElement(
+          'span',
+          { 'class': 'avatar' },
+          getProfilePhoto(user.thumbnail, user.gender)
+        ),
+        React.createElement(
+          'span',
+          { 'class': 'name' },
+          user.firstName,
+          ' ',
+          user.lastName
+        ),
+        React.createElement(
+          'span',
+          { 'class': 'age' },
+          user.age
+        ),
+        React.createElement(
+          'span',
+          { 'class': 'phone' },
+          formatPhoneNumber(user.phone.primary)
+        ),
+        React.createElement(
+          'span',
+          { 'class': 'email' },
+          user.email.primary
+        ),
+        React.createElement(
+          'span',
+          { 'class': 'address' },
+          user.address.primaryStreet,
+          ' ',
+          user.address.primaryCity,
+          ', ',
+          user.address.primaryState,
+          ' ',
+          user.address.primaryZip
+        )
+      )
+    );
+  });
+  return React.createElement(
+    'div',
+    { 'class': 'users' },
+    showUser
+  );
+}
+
+ReactDOM.render(React.createElement(DisplayUsers, { users: userData }), document.getElementById('results--items'));
 //# sourceMappingURL=main.js.map
