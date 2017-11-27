@@ -65,6 +65,7 @@ var userData = [{
   firstName: "Josh",
   lastName: "Wilkerson",
   age: 33,
+  gender: "male",
   phone: {
     primary: 6157398522,
     primaryType: "cell"
@@ -92,6 +93,7 @@ var userData = [{
   firstName: "Curtis",
   lastName: "Ganes",
   age: 40,
+  gender: "male",
   phone: {
     primary: 6153922812,
     primaryType: "cell",
@@ -116,11 +118,12 @@ var userData = [{
     secondaryZip: 37023,
     secondaryType: "work"
   },
-  thumbnail: "https://joshwilkerson.com/PCO/users/male-4.jpg"
+  thumbnail: ""
 }, {
   firstName: "John",
   lastName: "Harwell",
   age: 35,
+  gender: "male",
   phone: {
     primary: 2103232903,
     primaryType: "cell",
@@ -150,6 +153,7 @@ var userData = [{
   firstName: "Sarah",
   lastName: "Ramsey",
   age: 29,
+  gender: "female",
   phone: {
     primary: 615311948,
     primaryType: "cell",
@@ -179,6 +183,7 @@ var userData = [{
   firstName: "Beth",
   lastName: "Robertson",
   age: 34,
+  gender: "female",
   phone: {
     primary: 6159289313,
     primaryType: "cell",
@@ -208,6 +213,7 @@ var userData = [{
   firstName: "Stephen",
   lastName: "Adams",
   age: 30,
+  gender: "male",
   phone: {
     primary: 6152931938,
     primaryType: "cell",
@@ -237,6 +243,7 @@ var userData = [{
   firstName: "Katie",
   lastName: "Watson",
   age: 42,
+  gender: "female",
   phone: {
     primary: 6155834921,
     primaryType: "cell",
@@ -266,6 +273,7 @@ var userData = [{
   firstName: "Mark",
   lastName: "Hammond",
   age: 39,
+  gender: "male",
   phone: {
     primary: 6152146021,
     primaryType: "cell",
@@ -295,6 +303,7 @@ var userData = [{
   firstName: "Emily",
   lastName: "Smith",
   age: 39,
+  gender: "female",
   phone: {
     primary: 6155373582,
     primaryType: "cell",
@@ -319,7 +328,7 @@ var userData = [{
     secondaryZip: 37205,
     secondaryType: "work"
   },
-  thumbnail: "https://joshwilkerson.com/PCO/users/female-5.jpg"
+  thumbnail: ""
 }];
 
 function getProfilePhoto(image, gender) {
@@ -350,7 +359,7 @@ function DisplayUsers(props) {
       { 'class': 'user' },
       React.createElement(
         'a',
-        { href: '#' },
+        { href: 'view.html' },
         React.createElement(
           'span',
           { 'class': 'avatar' },
